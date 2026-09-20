@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-from urllib.parse import quote
 st.set_page_config(page_title="Car Prediction System", page_icon="🚗", layout="wide")
 
 DATA_FILE = "car_details.csv"
@@ -22,10 +21,6 @@ def load_data():
 
 df = load_data()
 
-def image_url(name, i=0):
-    q = quote(str(name) + " car")
-    return f"https://loremflickr.com/900/520/{q}?lock={(abs(hash(str(name)))+i)%1000}"
-
 def price(v):
     return f"₹{int(v):,}"
 
@@ -33,7 +28,7 @@ st.markdown("""
 <style>
 .stApp{background:radial-gradient(circle at 10% 0%,#132a4b,transparent 30%),#07101f;color:#f8fafc}
 [data-testid="stSidebar"]{background:#09111f;border-right:1px solid #24446f}
-.hero,.metric,.car,.prediction{background:linear-gradient(145deg,#10254a,#0b1629);
+.hero,.metric,.car{background:linear-gradient(145deg,#10254a,#0b1629);
 border:1px solid #294a75;border-radius:20px;box-shadow:0 15px 45px #0004}
 .hero{padding:35px;margin-bottom:25px}.hero h1{font-size:38px;color:white;margin:0}
 .hero p{color:#aebed3;font-size:16px}.metric{padding:20px;text-align:center;min-height:120px}
@@ -41,7 +36,6 @@ border:1px solid #294a75;border-radius:20px;box-shadow:0 15px 45px #0004}
 .car{padding:20px;margin-bottom:20px}.car h2{font-size:21px;color:white}
 .car .price{font-size:25px;font-weight:800;color:#60a5fa}
 .match{display:inline-block;background:#123d35;color:#62e6b7;padding:6px 10px;border-radius:20px}
-.prediction{padding:28px;margin-top:25px}.bigprice{font-size:35px;font-weight:900;color:#67e8f9}
 </style>
 """, unsafe_allow_html=True)
 
@@ -124,7 +118,7 @@ else:
         s += 15 if owner=="Any" or row.owner==owner else 0
         s += 15 if row.km_driven<=max_km else 0
         return min(100,max(0,s))
-    r["score"]=r.apply(score,axis=1).sort_values if False else r.apply(score,axis=1)
+    r["score"] = r.apply(score, axis=1)
     r=r.sort_values(["score","year"],ascending=False).head(6).reset_index(drop=True)
     st.success(f"Found {len(r)} top matching cars.")
     for start in range(0,len(r),2):
@@ -134,7 +128,6 @@ else:
             if i>=len(r): continue
             row=r.iloc[i]
             with col:
-                st.image(image_url(row["name"],i),use_container_width=True,caption=row["name"])
                 st.markdown(f"""
                 <div class="car">
                 <h2>🚘 {row["name"]}</h2>

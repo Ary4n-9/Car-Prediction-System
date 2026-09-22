@@ -162,156 +162,169 @@ st.markdown(
     """
 <style>
 .stApp {
-    background: #f6f7fb;
-    color: #172033;
+    background: linear-gradient(135deg, #e8edf5 0%, #f4f6fa 48%, #e3eaf4 100%);
+    color: #182230;
 }
 
 [data-testid="stHeader"] {
-    background: rgba(255,255,255,0.9);
+    background: transparent;
 }
 
 [data-testid="stSidebar"] {
-    background: #ffffff;
-    border-right: 1px solid #e5e7eb;
+    background: linear-gradient(180deg, #152237 0%, #1d2d46 100%);
+    border-right: 1px solid #223b5d;
+}
+
+[data-testid="stSidebar"] * {
+    color: #edf4ff !important;
+}
+
+[data-testid="stSidebar"] .stCaption,
+[data-testid="stSidebar"] small {
+    color: #b9c7d8 !important;
 }
 
 .block-container {
-    padding-top: 1.5rem;
+    padding-top: 1.2rem;
     padding-bottom: 2rem;
-    max-width: 1400px;
+    max-width: 1450px;
 }
 
 .topbar {
-    background: #ffffff;
-    border-bottom: 1px solid #e8ebf0;
-    border-radius: 16px;
-    padding: 12px 18px;
+    background: linear-gradient(120deg, #16243a, #274b72);
+    border: 1px solid #385e87;
+    border-radius: 18px;
+    padding: 15px 20px;
     margin-bottom: 18px;
+    box-shadow: 0 12px 28px rgba(24, 42, 68, .16);
 }
 
 .brand {
-    font-size: 24px;
+    font-size: 25px;
     font-weight: 900;
-    color: #d62f2f;
+    color: #ffffff;
 }
 
 .brand-sub {
-    color: #5f6b7a;
+    color: #cbd8e7;
     font-size: 13px;
 }
 
 .auth-card {
-    max-width: 620px;
-    margin: 50px auto 0 auto;
-    background: #ffffff;
-    border: 1px solid #e6e8ee;
-    border-radius: 24px;
-    padding: 34px;
-    box-shadow: 0 20px 60px rgba(27, 39, 66, 0.10);
+    max-width: 650px;
+    margin: 42px auto 18px auto;
+    background: linear-gradient(145deg, #17263d, #253f60);
+    border: 1px solid #3a5c82;
+    border-radius: 26px;
+    padding: 36px;
+    box-shadow: 0 22px 60px rgba(16, 31, 52, .22);
 }
 
 .auth-title {
     font-size: 36px;
     font-weight: 900;
-    color: #172033;
+    color: #ffffff;
     margin-bottom: 4px;
 }
 
 .auth-sub {
-    color: #6b7280;
+    color: #c8d5e5;
     font-size: 15px;
     margin-bottom: 22px;
 }
 
 .hero {
-    background: linear-gradient(120deg, #fff1f1, #ffffff 55%, #f4f8ff);
-    border: 1px solid #eceff4;
+    background: linear-gradient(115deg, #203653 0%, #2e557f 55%, #496f9d 100%);
+    border: 1px solid #5279a5;
     border-radius: 22px;
     padding: 30px;
     margin-bottom: 22px;
+    box-shadow: 0 14px 34px rgba(33, 58, 88, .16);
 }
 
 .hero h1 {
     margin: 0;
     font-size: 37px;
     font-weight: 900;
-    color: #172033;
+    color: #ffffff;
 }
 
 .hero p {
     margin-top: 8px;
-    color: #657184;
+    color: #d7e2ef;
     font-size: 16px;
 }
 
 .stat {
     background: #ffffff;
-    border: 1px solid #e8ebf0;
+    border: 1px solid #d6dde7;
     border-radius: 18px;
     padding: 18px;
     min-height: 105px;
-    box-shadow: 0 10px 26px rgba(27,39,66,0.05);
+    box-shadow: 0 10px 26px rgba(30, 49, 77, .08);
 }
 
 .stat .value {
     font-size: 25px;
     font-weight: 900;
-    color: #172033;
+    color: #182230;
 }
 
 .stat .label {
-    color: #727c8d;
+    color: #6e7b8d;
     font-size: 13px;
 }
 
 .car-card {
     background: #ffffff;
-    border: 1px solid #e6e8ee;
+    border: 1px solid #d7dfe9;
     border-radius: 20px;
     padding: 20px;
     margin-bottom: 18px;
-    box-shadow: 0 12px 30px rgba(27,39,66,0.06);
+    box-shadow: 0 12px 30px rgba(27, 46, 73, .08);
+    min-height: 285px;
 }
 
 .car-title {
     font-size: 21px;
     font-weight: 850;
-    color: #172033;
+    color: #1d2a3a;
     margin-bottom: 6px;
 }
 
 .car-price {
     font-size: 24px;
     font-weight: 900;
-    color: #d62f2f;
+    color: #d73a3a;
 }
 
 .badge {
     display: inline-block;
     padding: 6px 10px;
     border-radius: 999px;
-    background: #eaf8f0;
-    color: #1f8a52;
+    background: #edf4ff;
+    color: #2f5f8f;
     font-size: 12px;
     font-weight: 800;
 }
 
 .meta {
-    color: #5f6b7a;
+    color: #556376;
     font-size: 14px;
-    line-height: 1.8;
+    line-height: 1.9;
 }
 
 .seller-box {
-    background: #fff9f9;
-    border: 1px solid #f4cccc;
+    background: linear-gradient(145deg, #eef5fb, #f7faff);
+    border: 1px solid #b8cce0;
     border-radius: 20px;
     padding: 22px;
     margin-top: 12px;
+    box-shadow: 0 10px 24px rgba(47, 79, 113, .08);
 }
 
 .seller-title {
-    color: #b42318;
+    color: #274f78;
     font-size: 20px;
     font-weight: 900;
     margin-bottom: 12px;
@@ -329,7 +342,7 @@ st.markdown(
 
 .footer {
     text-align: center;
-    color: #8993a3;
+    color: #718096;
     padding-top: 26px;
     font-size: 13px;
 }
@@ -432,15 +445,15 @@ if not st.session_state.logged_in:
             st.session_state.selected_car = None
             st.rerun()
 
-    st.markdown('<div class="footer">Buyer-focused used-car marketplace interface</div>', unsafe_allow_html=True)
+    st.markdown('<div class="footer">Buyer-focused car recommendation interface</div>', unsafe_allow_html=True)
     st.stop()
 
 
 # ---------------- SIDEBAR ----------------
 
 with st.sidebar:
-    st.markdown('<div class="brand">🚗 Car24-style</div>', unsafe_allow_html=True)
-    st.caption("Buyer marketplace interface")
+    st.markdown('<div class="brand">🚗 AutoMatch</div>', unsafe_allow_html=True)
+    st.caption("Buyer car search interface")
     st.divider()
 
     st.markdown(f"**👋 Welcome, {st.session_state.user_name}**")
@@ -497,7 +510,7 @@ st.markdown(
     """
     <div class="topbar">
         <div class="brand">🚗 Car Prediction System</div>
-        <div class="brand-sub">Smart used-car search for buyers</div>
+        <div class="brand-sub">Find, compare and buy used cars</div>
     </div>
     """,
     unsafe_allow_html=True,
@@ -641,6 +654,6 @@ else:
         st.caption("Seller contact information shown here is demo data. Replace SELLER_DETAILS in app.py with your actual details.")
 
 st.markdown(
-    '<div class="footer">🚗 Car Prediction System • Buyer-focused used-car marketplace interface</div>',
+    '<div class="footer">🚗 Car Prediction System • Buyer-focused car recommendation interface</div>',
     unsafe_allow_html=True,
 )
